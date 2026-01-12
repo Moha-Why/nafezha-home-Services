@@ -1,7 +1,8 @@
 import { categories } from "@/db/data";
 import ServiceCard from "./ServiceCard";
 
-export default function Services() {
+export default function Services( { city } ) {
+  const currentCity = city
   return (
     <section
       className="w-full py-12 px-4 md:px-6 lg:px-8"
@@ -29,6 +30,7 @@ export default function Services() {
               key={category.slug}
               name={category.name}
               slug={category.slug}
+              city={currentCity}
               imageURL={category.imageURL}
             />
           ))}

@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 
-export default function CategoryServiceCard({ name, imgURL, description_short, number }) {
+export default function CategoryServiceCard({ name, imgURL, city, description_short, number }) {
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(`مرحباً، أريد الاستفسار عن خدمة: ${name}`);
+    const message = encodeURIComponent(`مرحباً، أريد الاستفسار عن خدمة: ${name} ${city}`);
     const whatsappUrl = `https://wa.me/${number}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -24,9 +24,11 @@ export default function CategoryServiceCard({ name, imgURL, description_short, n
         {/* Background Image */}
         <Image
           src={imgURL}
-          alt={name}
+          alt={`${name} في السعودية - نفذها | ${description_short}`}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-110"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          loading="lazy"
         />
 
         {/* Full Overlay */}

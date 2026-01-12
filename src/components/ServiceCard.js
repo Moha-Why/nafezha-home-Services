@@ -3,10 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ServiceCard({ name, slug, imageURL }) {
+export default function ServiceCard({ name, city, slug, imageURL }) {
   return (
     <Link
-      href={`/services/${slug}`}
+      href={`/services/${city}/${slug}`}
       className="group block rounded-xl overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl"
       style={{
         backgroundColor: 'var(--color-bg)',
@@ -22,9 +22,11 @@ export default function ServiceCard({ name, slug, imageURL }) {
         {/* Background Image */}
         <Image
           src={imageURL}
-          alt={name}
+          alt={`خدمات ${name} في السعودية - نفذها | صيانة منزلية احترافية`}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-110"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={false}
         />
 
         {/* Full Overlay */}

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import CategoryServiceCard from "./CategoryServiceCard";
 
-export default function CategoryServicesGrid({ services }) {
+export default function CategoryServicesGrid({ services, city }) {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Filter services based on search query
@@ -84,6 +84,7 @@ export default function CategoryServicesGrid({ services }) {
               key={index}
               name={service.name}
               imgURL={service.imgURL}
+              city={city}
               description_short={service.description_short}
               number={service.number}
             />

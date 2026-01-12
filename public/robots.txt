@@ -1,0 +1,22 @@
+# robots.txt for nafzha.com
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://nafzha.com/sitemap.xml
+
+# Disallow API routes if any
+User-agent: *
+Disallow: /api/
+
+# Allow specific search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

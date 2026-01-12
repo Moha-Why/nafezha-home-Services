@@ -17,6 +17,11 @@ export const metadata = {
     template: "%s | نفذها"
   },
   description: "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية. فرقنا الفنية متخصصة وتعمل وفق أعلى معايير الجودة، لتلبية جميع احتياجات المنازل، الفلل، المباني، والمشاريع تحت سقف واحد وبحلول عملية وسريعة.",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
   keywords: [
     "خدمات منزلية",
     "صيانة منزلية",
@@ -42,22 +47,31 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://nafzha.com'),
+  metadataBase: new URL('https://nafezha-home-services.vercel.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "نفذها - خدمات منزلية وصيانة متكاملة في السعودية",
     description: "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية. فرقنا الفنية متخصصة وتعمل وفق أعلى معايير الجودة.",
-    url: 'https://nafzha.com',
+    url: 'https://nafezha-home-services.vercel.app',
     siteName: 'نفذها',
     locale: 'ar_SA',
     type: 'website',
+    images: [
+      {
+        url: '/cleaning.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'نفذها - خدمات منزلية وصيانة في السعودية',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: "نفذها - خدمات منزلية وصيانة متكاملة في السعودية",
     description: "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية.",
+    images: ['/cleaning.jpg'],
   },
   robots: {
     index: true,

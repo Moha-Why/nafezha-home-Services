@@ -3,12 +3,12 @@ import CategoryServicesGrid from "@/components/CategoryServicesGrid";
 import { notFound } from "next/navigation";
 
 export default async function CategoryPage({ params }) {
-  const { catagory } = await params;
+  const { city, service } = await params;
 
 
-  const decoded = decodeURIComponent(catagory);
+  const decoded = decodeURIComponent(service);
+  const currentCity = decodeURIComponent(city)
   // Find the category by slug
-  console.log(catagory)
   const category = categories.find((cat) => cat.slug === decoded);
 
   // If category not found, show 404
@@ -41,7 +41,7 @@ export default async function CategoryPage({ params }) {
         </div>
 
         {/* Search Bar and Services Grid */}
-        <CategoryServicesGrid services={categoryServices} />
+        <CategoryServicesGrid services={categoryServices} city={currentCity} />
       </div>
     </div>
   );
