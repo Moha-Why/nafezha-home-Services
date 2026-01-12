@@ -87,13 +87,28 @@ export const categories = [
 خدمات صيانة شاملة تناسب جميع أنواع المباني.`
   },
   {
-    name: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    slug: "الحدادة-والألمنيوم-والاستيل-والمقاولات-العامة",
+    name: "الحدادة",
+    slug: "الحدادة",
     imageURL: "/metal.jpg",
-    description: `أعمال حدادة وألمنيوم واستيل للمنازل والقصور والمشاريع.
-تصنيع وتركيب الأبواب، السلالم، الدرابزين، والواجهات.
-خدمات مقاولات عامة تشمل الترميم والتشطيب وإدارة المشاريع.
-جودة عالية وتنفيذ مطابق للمواصفات الهندسية.`
+    description: `أعمال حدادة للمنازل والقصور والمشاريع.
+تصنيع وتركيب الأبواب، السلالم، الدرابزين، والسواتر.
+تنفيذ بجودة عالية ومطابق للمواصفات الهندسية.`
+  },
+  {
+    name: "الألمنيوم والاستيل",
+    slug: "الألمنيوم-والاستيل",
+    imageURL: "/metal.jpg",
+    description: `أعمال الألمنيوم والاستيل للمنازل والمشاريع.
+تركيب أبواب وشبابيك وواجهات وكلادينج بدرجات عالية من العزل والمتانة.
+تنفيذ متقن يتوافق مع التصميمات الهندسية الحديثة.`
+  },
+  {
+    name: "المقاولات العامة",
+    slug: "المقاولات-العامة",
+    imageURL: "/metal.jpg",
+    description: `خدمات مقاولات عامة تشمل الترميم، التشطيب، وإدارة المشاريع.
+تنفيذ مشاريع البناء من البداية للنهاية بجودة ودقة عالية.
+إشراف هندسي وضمان الالتزام بالمواصفات والمعايير العالمية.`
   },
   {
     name: "الهناجر",
@@ -916,10 +931,11 @@ export const services = [
     description_short: "إدارة وصيانة مرافق المباني.",
     description_long: "خدمات إدارة مرافق شاملة للمباني السكنية والتجارية."
   },
+// -------------------- الحدادة --------------------
   {
     name: "أعمال حدادة",
     imgURL: "/metal.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
+    category: "الحدادة",
     number: "966572652193",
     description_short: "تنفيذ جميع أعمال الحدادة.",
     description_long: "تنفيذ أعمال الحدادة للمنازل والمباني بجودة عالية وتشطيبات متقنة."
@@ -927,7 +943,7 @@ export const services = [
   {
     name: "بوابات حديد",
     imgURL: "/metal.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
+    category: "الحدادة",
     number: "966572652193",
     description_short: "تصميم وتركيب بوابات حديد.",
     description_long: "تصميم وتركيب بوابات حديد آمنة بأشكال عصرية وكلاسيكية."
@@ -935,7 +951,7 @@ export const services = [
   {
     name: "سواتر حديد",
     imgURL: "/metal.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
+    category: "الحدادة",
     number: "966572652193",
     description_short: "تركيب سواتر حديد.",
     description_long: "سواتر حديد للحماية والخصوصية بتصاميم متنوعة."
@@ -943,7 +959,7 @@ export const services = [
   {
     name: "شبابيك حديد",
     imgURL: "/metal.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
+    category: "الحدادة",
     number: "966572652193",
     description_short: "تركيب شبابيك حديد.",
     description_long: "شبابيك حديد للحماية مع المحافظة على الشكل الجمالي."
@@ -951,159 +967,15 @@ export const services = [
   {
     name: "درابزين حديد",
     imgURL: "/metal.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
+    category: "الحدادة",
     number: "966572652193",
     description_short: "درابزين حديد للسلالم.",
     description_long: "تنفيذ درابزين حديد داخلي وخارجي بجودة عالية."
   },
   {
-    name: "أعمال ألمنيوم",
-    imgURL: "/aluminum.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "تنفيذ أعمال الألمنيوم.",
-    description_long: "تنفيذ جميع أعمال الألمنيوم للمنازل والمشاريع."
-  },
-  {
-    name: "شبابيك ألمنيوم",
-    imgURL: "/aluminum.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "تركيب شبابيك ألمنيوم.",
-    description_long: "شبابيك ألمنيوم عازلة للحرارة والصوت."
-  },
-  {
-    name: "أبواب ألمنيوم",
-    imgURL: "/aluminum.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "أبواب ألمنيوم عصرية.",
-    description_long: "تركيب أبواب ألمنيوم قوية بتصاميم حديثة."
-  },
-  {
-    name: "واجهات ألمنيوم",
-    imgURL: "/aluminum.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "واجهات ألمنيوم للمباني.",
-    description_long: "تنفيذ واجهات ألمنيوم أنيقة للمباني التجارية والسكنية."
-  },
-  {
-    name: "كلادينج",
-    imgURL: "/aluminum.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "تركيب كلادينج.",
-    description_long: "تركيب واجهات كلادينج مقاومة للعوامل الجوية."
-  },
-  {
-    name: "أعمال استيل",
-    imgURL: "/steel.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "تنفيذ أعمال استيل.",
-    description_long: "تنفيذ أعمال استيل مقاوم للصدأ للمنازل والمطاعم."
-  },
-  {
-    name: "درابزين استيل",
-    imgURL: "/steel.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "درابزين استيل.",
-    description_long: "تركيب درابزين استيل للسلالم والبلكونات."
-  },
-  {
-    name: "مظلات سيارات",
-    imgURL: "/steel.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "تركيب مظلات سيارات.",
-    description_long: "مظلات سيارات لحماية المركبات من الشمس والأمطار."
-  },
-  {
-    name: "مستودعات حديد",
-    imgURL: "/steel.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "إنشاء مستودعات حديد.",
-    description_long: "تنفيذ مستودعات حديد بمواصفات قوية وآمنة."
-  },
-  {
-    name: "هناجر",
-    imgURL: "/steel.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "إنشاء هناجر.",
-    description_long: "تصميم وتنفيذ هناجر للمصانع والمخازن."
-  },
-  {
-    name: "مقاولات عامة",
-    imgURL: "/construction.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "مقاولات عامة للمباني.",
-    description_long: "تنفيذ مشاريع مقاولات عامة من البداية حتى التسليم."
-  },
-  {
-    name: "ترميم مباني",
-    imgURL: "/construction.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "ترميم المباني القديمة.",
-    description_long: "ترميم وإعادة تأهيل المباني وتحسين بنيتها."
-  },
-  {
-    name: "تشطيب كامل",
-    imgURL: "/construction.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "تشطيب كامل للمنازل.",
-    description_long: "تشطيب داخلي وخارجي كامل بجودة عالية."
-  },
-  {
-    name: "إدارة مشاريع",
-    imgURL: "/construction.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "إدارة مشاريع البناء.",
-    description_long: "إدارة وتنظيم مشاريع البناء لضمان الجودة والالتزام بالوقت."
-  },
-  {
-    name: "تسليم مفتاح",
-    imgURL: "/construction.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "مشاريع تسليم مفتاح.",
-    description_long: "تنفيذ المشروع كاملًا وتسليمه جاهزًا للاستخدام."
-  },
-  {
-    name: "إشراف هندسي",
-    imgURL: "/construction.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "إشراف هندسي للمشاريع.",
-    description_long: "إشراف هندسي لضمان تنفيذ الأعمال حسب المواصفات."
-  },
-  {
-    name: "توسعة مباني",
-    imgURL: "/construction.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "توسعة المباني.",
-    description_long: "تنفيذ توسعات للمنازل والمباني القائمة."
-  },
-  {
-    name: "بناء ملاحق",
-    imgURL: "/construction.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
-    number: "966572652193",
-    description_short: "بناء ملاحق.",
-    description_long: "بناء ملاحق سكنية وخدمية حسب الطلب."
-  },
-  {
     name: "تركيب سلالم حديد",
     imgURL: "/metal.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
+    category: "الحدادة",
     number: "966572652193",
     description_short: "تركيب سلالم حديد.",
     description_long: "تنفيذ وتركيب سلالم حديد داخلية وخارجية."
@@ -1111,7 +983,7 @@ export const services = [
   {
     name: "تركيب أبواب حديد",
     imgURL: "/metal.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
+    category: "الحدادة",
     number: "966572652193",
     description_short: "أبواب حديد قوية.",
     description_long: "تركيب أبواب حديد للحماية والأمان."
@@ -1119,7 +991,7 @@ export const services = [
   {
     name: "قص ليزر حديد",
     imgURL: "/metal.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
+    category: "الحدادة",
     number: "966572652193",
     description_short: "قص ليزر للحديد.",
     description_long: "قص ليزر دقيق للحديد بتصاميم حديثة."
@@ -1127,7 +999,7 @@ export const services = [
   {
     name: "لحام معادن",
     imgURL: "/metal.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
+    category: "الحدادة",
     number: "966572652193",
     description_short: "خدمات لحام المعادن.",
     description_long: "لحام جميع أنواع المعادن بدقة وأمان."
@@ -1135,18 +1007,158 @@ export const services = [
   {
     name: "صيانة أبواب حديد",
     imgURL: "/metal.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
+    category: "الحدادة",
     number: "966572652193",
     description_short: "صيانة أبواب حديد.",
     description_long: "صيانة وإصلاح أبواب الحديد المتضررة."
   },
+
+  // -------------------- الألمنيوم والاستيل --------------------
   {
-    name: "صيانة ألمنيوم",
+    name: "أعمال ألمنيوم",
     imgURL: "/aluminum.jpg",
-    category: "الحدادة والألمنيوم والاستيل والمقاولات العامة",
+    category: "الألمنيوم والاستيل",
     number: "966572652193",
-    description_short: "صيانة ألمنيوم.",
-    description_long: "صيانة وإصلاح أعمال الألمنيوم."
+    description_short: "تنفيذ أعمال الألمنيوم.",
+    description_long: "تنفيذ جميع أعمال الألمنيوم للمنازل والمشاريع."
+  },
+  {
+    name: "شبابيك ألمنيوم",
+    imgURL: "/aluminum.jpg",
+    category: "الألمنيوم والاستيل",
+    number: "966572652193",
+    description_short: "تركيب شبابيك ألمنيوم.",
+    description_long: "شبابيك ألمنيوم عازلة للحرارة والصوت."
+  },
+  {
+    name: "أبواب ألمنيوم",
+    imgURL: "/aluminum.jpg",
+    category: "الألمنيوم والاستيل",
+    number: "966572652193",
+    description_short: "أبواب ألمنيوم عصرية.",
+    description_long: "تركيب أبواب ألمنيوم قوية بتصاميم حديثة."
+  },
+  {
+    name: "واجهات ألمنيوم",
+    imgURL: "/aluminum.jpg",
+    category: "الألمنيوم والاستيل",
+    number: "966572652193",
+    description_short: "واجهات ألمنيوم للمباني.",
+    description_long: "تنفيذ واجهات ألمنيوم أنيقة للمباني التجارية والسكنية."
+  },
+  {
+    name: "كلادينج",
+    imgURL: "/aluminum.jpg",
+    category: "الألمنيوم والاستيل",
+    number: "966572652193",
+    description_short: "تركيب كلادينج.",
+    description_long: "تركيب واجهات كلادينج مقاومة للعوامل الجوية."
+  },
+  {
+    name: "أعمال استيل",
+    imgURL: "/steel.jpg",
+    category: "الألمنيوم والاستيل",
+    number: "966572652193",
+    description_short: "تنفيذ أعمال استيل.",
+    description_long: "تنفيذ أعمال استيل مقاوم للصدأ للمنازل والمطاعم."
+  },
+  {
+    name: "درابزين استيل",
+    imgURL: "/steel.jpg",
+    category: "الألمنيوم والاستيل",
+    number: "966572652193",
+    description_short: "درابزين استيل.",
+    description_long: "تركيب درابزين استيل للسلالم والبلكونات."
+  },
+  {
+    name: "مظلات سيارات",
+    imgURL: "/steel.jpg",
+    category: "الألمنيوم والاستيل",
+    number: "966572652193",
+    description_short: "تركيب مظلات سيارات.",
+    description_long: "مظلات سيارات لحماية المركبات من الشمس والأمطار."
+  },
+
+  // -------------------- المقاولات العامة --------------------
+  {
+    name: "مستودعات حديد",
+    imgURL: "/construction.jpg",
+    category: "المقاولات العامة",
+    number: "966572652193",
+    description_short: "إنشاء مستودعات حديد.",
+    description_long: "تنفيذ مستودعات حديد بمواصفات قوية وآمنة."
+  },
+  {
+    name: "هناجر",
+    imgURL: "/construction.jpg",
+    category: "المقاولات العامة",
+    number: "966572652193",
+    description_short: "إنشاء هناجر.",
+    description_long: "تصميم وتنفيذ هناجر للمصانع والمخازن."
+  },
+  {
+    name: "مقاولات عامة",
+    imgURL: "/construction.jpg",
+    category: "المقاولات العامة",
+    number: "966572652193",
+    description_short: "مقاولات عامة للمباني.",
+    description_long: "تنفيذ مشاريع مقاولات عامة من البداية حتى التسليم."
+  },
+  {
+    name: "ترميم مباني",
+    imgURL: "/construction.jpg",
+    category: "المقاولات العامة",
+    number: "966572652193",
+    description_short: "ترميم المباني القديمة.",
+    description_long: "ترميم وإعادة تأهيل المباني وتحسين بنيتها."
+  },
+  {
+    name: "تشطيب كامل",
+    imgURL: "/construction.jpg",
+    category: "المقاولات العامة",
+    number: "966572652193",
+    description_short: "تشطيب كامل للمنازل.",
+    description_long: "تشطيب داخلي وخارجي كامل بجودة عالية."
+  },
+  {
+    name: "إدارة مشاريع",
+    imgURL: "/construction.jpg",
+    category: "المقاولات العامة",
+    number: "966572652193",
+    description_short: "إدارة مشاريع البناء.",
+    description_long: "إدارة وتنظيم مشاريع البناء لضمان الجودة والالتزام بالوقت."
+  },
+  {
+    name: "تسليم مفتاح",
+    imgURL: "/construction.jpg",
+    category: "المقاولات العامة",
+    number: "966572652193",
+    description_short: "مشاريع تسليم مفتاح.",
+    description_long: "تنفيذ المشروع كاملًا وتسليمه جاهزًا للاستخدام."
+  },
+  {
+    name: "إشراف هندسي",
+    imgURL: "/construction.jpg",
+    category: "المقاولات العامة",
+    number: "966572652193",
+    description_short: "إشراف هندسي للمشاريع.",
+    description_long: "إشراف هندسي لضمان تنفيذ الأعمال حسب المواصفات."
+  },
+  {
+    name: "توسعة مباني",
+    imgURL: "/construction.jpg",
+    category: "المقاولات العامة",
+    number: "966572652193",
+    description_short: "توسعة المباني.",
+    description_long: "تنفيذ توسعات للمنازل والمباني القائمة."
+  },
+  {
+    name: "بناء ملاحق",
+    imgURL: "/construction.jpg",
+    category: "المقاولات العامة",
+    number: "966572652193",
+    description_short: "بناء ملاحق.",
+    description_long: "بناء ملاحق سكنية وخدمية حسب الطلب."
   },
   {
     name: "تصميم هناجر صناعية",
