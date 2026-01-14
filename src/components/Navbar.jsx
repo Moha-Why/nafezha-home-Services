@@ -74,7 +74,7 @@ export default function Navbar() {
             {/* CTA Button */}
             <div className="hidden md:block">
               <a
-                href="https://wa.me/966500000000"
+                href="https://wa.me/966572652193"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 hover:scale-105 hover:shadow-lg"

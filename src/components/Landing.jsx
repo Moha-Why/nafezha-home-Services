@@ -81,7 +81,7 @@ export default function Landing() {
           {/* CTA Button */}
           <div className="flex justify-center mb-16">
             <a
-              href="https://wa.me/966500000000"
+              href="https://wa.me/966572652193"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105"
