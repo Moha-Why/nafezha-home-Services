@@ -22,8 +22,10 @@ export default async function CategoryPage({ params }) {
   );
 
   return (
-    <div className="min-h-screen py-12 px-4" style={{ backgroundColor: 'var(--color-bg-section)' }}>
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg-section)' }}>
+ 
+
+      <div className="max-w-7xl mx-auto py-12 px-4">
         {/* Category Header */}
         <div className="text-center mb-12">
           <h1
@@ -32,6 +34,11 @@ export default async function CategoryPage({ params }) {
           >
             {category.name}
           </h1>
+               {/* Accent Bar */}
+      <div
+        className="h-1 mx-[35%] mb-2"
+        style={{ backgroundColor: 'var(--color-primary)' }}
+      />
           <p
             className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed whitespace-pre-line"
             style={{ color: 'var(--color-text-body)' }}

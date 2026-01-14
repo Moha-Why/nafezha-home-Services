@@ -1,17 +1,6 @@
 import Services from "@/components/Services";
 import { Cossette_Texte } from "next/font/google";
 
-export const metadata = {
-  title: "نفذها - خدمات منزلية وصيانة متكاملة في السعودية",
-  description: "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية. فرقنا الفنية متخصصة وتعمل وفق أعلى معايير الجودة، لتلبية جميع احتياجات المنازل، الفلل، المباني، والمشاريع تحت سقف واحد وبحلول عملية وسريعة.",
-  openGraph: {
-    title: "نفذها - خدمات منزلية وصيانة متكاملة في السعودية",
-    description: "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية. فرقنا الفنية متخصصة وتعمل وفق أعلى معايير الجودة، لتلبية جميع احتياجات المنازل، الفلل، المباني، والمشاريع تحت سقف واحد وبحلول عملية وسريعة.",
-    url: 'nafezha-home-services.app.vercel',
-    type: 'website',
-  },
-};
-
 export default async function Home( { params } ) {
   const { city } = await params
   const currentCity = decodeURIComponent(city)
@@ -61,4 +50,24 @@ export default async function Home( { params } ) {
       </div>
     </>
   );
+}
+
+
+export async function generateMetadata(
+  { params }
+) {
+  const city = decodeURIComponent(params.city);
+
+  return {
+    title: `نفذها - خدمات منزلية وصيانة في ${city}`,
+    description:
+      "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية...",
+    openGraph: {
+      title: `نفذها - خدمات منزلية وصيانة في ${city}`,
+      description:
+        "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية...",
+      url: "https://nafezha-home-services.app.vercel",
+      type: "website",
+    },
+  };
 }
