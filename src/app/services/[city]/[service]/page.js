@@ -99,7 +99,7 @@ export default async function CategoryPage({ params }) {
   // Get city name for structured data
   const cityData = saudiCities.find((c) => c.slug === currentCity);
   const cityName = cityData?.name || currentCity;
-  const baseUrl = 'https://nafzha.com'; // Update with your actual domain
+  const baseUrl = 'https://nafezha-home-services.vercel.app/'; // Update with your actual domain
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg-section)' }}>
@@ -178,7 +178,7 @@ export async function generateMetadata({ params }) {
   const title = `خدمات ${category.name} في ${cityName} | نفذها - أفضل مزودي الخدمات`;
   const description = `احصل على أفضل خدمات ${category.name} في ${cityName}. ${category.description.split('\n')[0]} اتصل بنا الآن للحصول على عروض أسعار مجانية.`;
 
-  const baseUrl = 'https://nafzha.com'; // Update with your actual domain
+  const baseUrl = 'https://nafezha-home-services.vercel.app/'; // Update with your actual domain
   const canonicalUrl = `${baseUrl}/services/${city}/${service}`;
 
   return {

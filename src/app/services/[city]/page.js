@@ -6,7 +6,7 @@ function CityStructuredData({ cityName, baseUrl }) {
   const localBusinessData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": `${baseUrl}/#organization`,
+    "@id": `${baseUrl}`,
     "name": "نفذها",
     "description": `نقدم خدمات منزلية وصيانة متكاملة في ${cityName}. فرقنا الفنية متخصصة وتعمل وفق أعلى معايير الجودة.`,
     "url": baseUrl,
@@ -103,7 +103,7 @@ export default async function CityServicesPage({ params }) {
   // Get city data for proper name
   const cityData = saudiCities.find((c) => c.slug === currentCity);
   const cityName = cityData?.name || currentCity;
-  const baseUrl = 'https://nafzha.com';
+  const baseUrl = 'https://nafezha-home-services.vercel.app/';
 
   return (
     <>
@@ -130,7 +130,7 @@ export async function generateMetadata({ params }) {
   const cityData = saudiCities.find((c) => c.slug === decodedCity);
   const cityName = cityData?.name || decodedCity;
 
-  const baseUrl = 'https://nafzha.com';
+  const baseUrl = 'https://nafezha-home-services.vercel.app/';
   const canonicalUrl = `${baseUrl}/services/${city}`;
 
   const title = `خدمات منزلية وصيانة في ${cityName} | نفذها - أفضل مزودي الخدمات`;

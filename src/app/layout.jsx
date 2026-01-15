@@ -15,18 +15,18 @@ function OrganizationStructuredData() {
   const organizationData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://nafzha.com/#organization",
+    "@id": "https://nafezha-home-services.vercel.app//#organization",
     "name": "نفذها",
     "alternateName": "Nafzha",
     "description": "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية",
-    "url": "https://nafzha.com",
+    "url": "https://nafezha-home-services.vercel.app/",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://nafzha.com/icon.png",
+      "url": "https://nafezha-home-services.vercel.app//icon.png",
       "width": 512,
       "height": 512
     },
-    "image": "https://nafzha.com/icon.png",
+    "image": "https://nafezha-home-services.vercel.app//icon.png",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "SA",
@@ -76,18 +76,18 @@ function OrganizationStructuredData() {
   const websiteData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://nafzha.com/#website",
+    "@id": "https://nafezha-home-services.vercel.app/",
     "name": "نفذها",
-    "url": "https://nafzha.com",
+    "url": "https://nafezha-home-services.vercel.app/",
     "publisher": {
-      "@id": "https://nafzha.com/#organization"
+      "@id": "https://nafezha-home-services.vercel.app/"
     },
     "inLanguage": "ar-SA",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://nafzha.com/search?q={search_term_string}"
+        "urlTemplate": "https://nafezha-home-services.vercel.app/search?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -150,7 +150,7 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://nafzha.com'), // Updated to production domain
+  metadataBase: new URL('https://nafezha-home-services.vercel.app/'), // Updated to production domain
   alternates: {
     canonical: '/',
     languages: {
@@ -181,7 +181,7 @@ export const metadata = {
   openGraph: {
     title: "نفذها - خدمات منزلية وصيانة متكاملة في السعودية",
     description: "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية. فرقنا الفنية متخصصة وتعمل وفق أعلى معايير الجودة.",
-    url: 'https://nafzha.com',
+    url: 'https://nafezha-home-services.vercel.app/',
     siteName: 'نفذها',
     locale: 'ar_SA',
     type: 'website',
