@@ -1,6 +1,81 @@
-import { categories, services } from "@/db/data";
+import { categories, services, saudiCities } from "@/db/data";
 import CategoryServicesGrid from "@/components/CategoryServicesGrid";
 import { notFound } from "next/navigation";
+
+// JSON-LD Structured Data Component
+function ServiceStructuredData({ category, cityName, services, baseUrl }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `خدمات ${category.name} في ${cityName}`,
+    "description": category.description,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "نفذها",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": cityName,
+        "addressCountry": "SA"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": cityName
+    },
+    "serviceType": category.name,
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": `خدمات ${category.name}`,
+      "itemListElement": services.map((service, index) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": service.title,
+          "description": service.description
+        },
+        "position": index + 1
+      }))
+    }
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "الرئيسية",
+        "item": baseUrl
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": cityName,
+        "item": `${baseUrl}/services/${encodeURIComponent(cityName)}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": category.name,
+        "item": `${baseUrl}/services/${encodeURIComponent(cityName)}/${category.slug}`
+      }
+    ]
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
+    </>
+  );
+}
 
 export default async function CategoryPage({ params }) {
   const { city, service } = await params;
@@ -21,9 +96,19 @@ export default async function CategoryPage({ params }) {
     (service) => service.category === category.name
   );
 
+  // Get city name for structured data
+  const cityData = saudiCities.find((c) => c.slug === currentCity);
+  const cityName = cityData?.name || currentCity;
+  const baseUrl = 'https://nafzha.com'; // Update with your actual domain
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg-section)' }}>
- 
+      <ServiceStructuredData
+        category={category}
+        cityName={cityName}
+        services={categoryServices}
+        baseUrl={baseUrl}
+      />
 
       <div className="max-w-7xl mx-auto py-12 px-4">
         {/* Category Header */}
@@ -54,26 +139,90 @@ export default async function CategoryPage({ params }) {
   );
 }
 
-// Generate static params for all categories
+// Generate static params for all city + service combinations
 export async function generateStaticParams() {
-  return categories.map((category) => ({
-    catagory: category.slug,
-  }));
+  const { saudiCities } = await import("@/db/data");
+  const params = [];
+
+  for (const city of saudiCities) {
+    for (const category of categories) {
+      params.push({
+        city: city.slug,
+        service: category.slug,
+      });
+    }
+  }
+
+  return params;
 }
 
-// Generate metadata for each category page
+// Generate metadata for each category page with full SEO optimization
 export async function generateMetadata({ params }) {
-  const { catagory } = await params;
-  const category = categories.find((cat) => cat.slug === catagory);
+  const { city, service } = await params;
+  const { saudiCities } = await import("@/db/data");
+
+  const decodedService = decodeURIComponent(service);
+  const decodedCity = decodeURIComponent(city);
+
+  const category = categories.find((cat) => cat.slug === decodedService);
+  const cityData = saudiCities.find((c) => c.slug === decodedCity);
 
   if (!category) {
     return {
-      title: 'الفئة غير موجودة',
+      title: 'الفئة غير موجودة | نفذها',
+      robots: 'noindex, nofollow',
     };
   }
 
+  const cityName = cityData?.name || decodedCity;
+  const title = `خدمات ${category.name} في ${cityName} | نفذها - أفضل مزودي الخدمات`;
+  const description = `احصل على أفضل خدمات ${category.name} في ${cityName}. ${category.description.split('\n')[0]} اتصل بنا الآن للحصول على عروض أسعار مجانية.`;
+
+  const baseUrl = 'https://nafzha.com'; // Update with your actual domain
+  const canonicalUrl = `${baseUrl}/services/${city}/${service}`;
+
   return {
-    title: `${category.name} - خدماتنا`,
-    description: category.description,
+    title,
+    description,
+    keywords: `${category.name}, خدمات ${category.name}, ${category.name} ${cityName}, ${cityName}, خدمات منزلية, نفذها`,
+    authors: [{ name: 'نفذها' }],
+    creator: 'نفذها',
+    publisher: 'نفذها',
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'نفذها',
+      locale: 'ar_SA',
+      type: 'website',
+      images: [
+        {
+          url: `${baseUrl}/icon.png`,
+          width: 1200,
+          height: 630,
+          alt: `خدمات ${category.name} في ${cityName}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${baseUrl}/icon.png`],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   };
 }
