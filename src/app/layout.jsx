@@ -1,6 +1,7 @@
 import { Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 // Arabic-optimized font
 const notoSansArabic = Noto_Sans_Arabic({
@@ -232,6 +233,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

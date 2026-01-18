@@ -29,6 +29,7 @@ export default function Cities() {
               key={city.slug}
               name={city.name}
               slug={city.slug}
+              imgURL={city.imgURL}
             />
           ))}
         </div>

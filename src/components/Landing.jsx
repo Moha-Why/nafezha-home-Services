@@ -2,13 +2,13 @@
 
 
 export default function Landing() {
-  const services = [
-    { icon: "🔧", label: "صيانة عامة للمنزل" },
-    { icon: "⚡", label: "أعمال كهرباء وسباكة" },
-    { icon: "🚪", label: "تركيب أبواب ونوافذ" },
-    { icon: "🧹", label: "تنظيف وترتيب المنزل" },
-    { icon: "🏗️", label: "الترميم والتجديد" },
-  ];
+  // const services = [
+  //   { icon: "🔧", label: "صيانة عامة للمنزل" },
+  //   { icon: "⚡", label: "أعمال كهرباء وسباكة" },
+  //   { icon: "🚪", label: "تركيب أبواب ونوافذ" },
+  //   { icon: "🧹", label: "تنظيف وترتيب المنزل" },
+  //   { icon: "🏗️", label: "الترميم والتجديد" },
+  // ];
 
   return (
     <section
@@ -78,8 +78,21 @@ export default function Landing() {
             وفر الوقت، وتجنب عناء البحث، واحصل على خدمات منزلية عالية الجودة بضغطة زر.
           </p>
 
-          {/* CTA Button */}
-          <div className="flex justify-center mb-16">
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
+            <a
+              href="https://nafezha.com"
+              className="flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105"
+              style={{
+                backgroundColor: "#53bfff",
+                color: "#ffffff",
+              }}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+              </svg>
+              انضم لنا
+            </a>
             <a
               href="https://wa.me/966572652193"
               target="_blank"
@@ -99,7 +112,7 @@ export default function Landing() {
         </div>
 
         {/* Services Grid */}
-        <div className="mb-12">
+        {/* <div className="mb-12">
           <h2
             className="text-2xl md:text-3xl font-bold text-center mb-8"
             style={{ color: "var(--color-text-invert)" }}
@@ -126,7 +139,7 @@ export default function Landing() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom Tagline */}
         <div

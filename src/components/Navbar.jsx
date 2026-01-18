@@ -8,8 +8,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/", label: "الرئيسية" },
-    // { href: "/cities", label: "المدن" },
-    // { href: "/services", label: "الخدمات" },
+    { href: "/terms", label: "السياسات والشروط" },
   ];
 
   return (
