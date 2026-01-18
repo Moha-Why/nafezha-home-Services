@@ -1,24 +1,24 @@
 export const saudiCities = [
-  { name: "الرياض", slug: "الرياض", imgURL: "/cities/rayad.jfif" },
-  { name: "جدة", slug: "جدة", imgURL: "/cities/jadah.jfif" },
-  { name: "مكة المكرمة", slug: "مكة-المكرمة", imgURL: "/cities/makah.jfif" },
+  { name: "الرياض", slug: "الرياض", imgURL: "/cities/rayad.jpg" },
+  { name: "جدة", slug: "جدة", imgURL: "/cities/jadah.jpg" },
+  { name: "مكة المكرمة", slug: "مكة-المكرمة", imgURL: "/cities/makah.jpg" },
   { name: "المدينة المنورة", slug: "المدينة-المنورة", imgURL: "/cities/almadina.jpg" },
-  { name: "الدمام", slug: "الدمام", imgURL: "/cities/aldammam.jfif" },
+  { name: "الدمام", slug: "الدمام", imgURL: "/cities/aldammam.jpg" },
   { name: "الخبر", slug: "الخبر", imgURL: "/cities/alkhopar.jpg" },
-  { name: "الجبيل", slug: "الجبيل", imgURL: "/cities/aljubil.jfif" },
+  { name: "الجبيل", slug: "الجبيل", imgURL: "/cities/aljubil.jpg" },
   { name: "تبوك", slug: "تبوك", imgURL: "/cities/tabuk.jpg" },
-  { name: "أبها", slug: "أبها", imgURL: "/cities/abha.jfif" },
+  { name: "أبها", slug: "أبها", imgURL: "/cities/abha.jpg" },
   { name: "خميس مشيط", slug: "خميس-مشيط", imgURL: "/cities/khamismushait.jpg" },
   { name: "حائل", slug: "حائل", imgURL: "/cities/hail.jpg" },
-  { name: "بريدة", slug: "بريدة", imgURL: "/cities/buraydah.jfif" },
+  { name: "بريدة", slug: "بريدة", imgURL: "/cities/buraydah.jpg" },
   { name: "جازان", slug: "جازان", imgURL: "/cities/jazan.jpg" },
   { name: "نجران", slug: "نجران", imgURL: "/cities/najran.jpg" },
   { name: "الطائف", slug: "الطائف", imgURL: "/cities/taif.jpg" },
   { name: "عرعر", slug: "عرعر", imgURL: "/cities/arar.jpg" },
   { name: "الأحساء", slug: "الأحساء", imgURL: "/cities/alahsa.jpg" },
-  { name: "ينبع", slug: "ينبع", imgURL: "/cities/yanbu.jfif" },
+  { name: "ينبع", slug: "ينبع", imgURL: "/cities/yanbu.jpg" },
   { name: "سكاكا", slug: "سكاكا", imgURL: "/cities/sakaka.jpg" },
-  { name: "الباحة", slug: "الباحة", imgURL: "/cities/albahah.jfif" }
+  { name: "الباحة", slug: "الباحة", imgURL: "/cities/albahah.jpg" }
 ];
 
 
