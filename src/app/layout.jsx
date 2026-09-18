@@ -1,48 +1,48 @@
-import { Noto_Sans_Arabic } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { Noto_Sans_Arabic } from "next/font/google"
+import "./globals.css"
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
+import { SITE_URL } from "@/lib/site"
 
-// Arabic-optimized font
 const notoSansArabic = Noto_Sans_Arabic({
   variable: "--font-noto-arabic",
   subsets: ["arabic"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
-});
+})
 
-// JSON-LD Organization Structured Data
 function OrganizationStructuredData() {
   const organizationData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://nafezha-home-services.vercel.app//#organization",
-    "name": "نفذها",
-    "alternateName": "Nafzha",
-    "description": "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية",
-    "url": "https://nafezha-home-services.vercel.app/",
-    "logo": {
+    "@id": `${SITE_URL}/#organization`,
+    name: "نفذها",
+    alternateName: "Nafzha",
+    description:
+      "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية",
+    url: SITE_URL,
+    logo: {
       "@type": "ImageObject",
-      "url": "https://nafezha-home-services.vercel.app//icon.png",
-      "width": 512,
-      "height": 512
+      url: `${SITE_URL}/icon.png`,
+      width: 512,
+      height: 512,
     },
-    "image": "https://nafezha-home-services.vercel.app//icon.png",
-    "address": {
+    image: `${SITE_URL}/icon.png`,
+    address: {
       "@type": "PostalAddress",
-      "addressCountry": "SA",
-      "addressRegion": "المملكة العربية السعودية"
+      addressCountry: "SA",
+      addressRegion: "المملكة العربية السعودية",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": "24.7136",
-      "longitude": "46.6753"
+      latitude: "24.7136",
+      longitude: "46.6753",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "Country",
-      "name": "المملكة العربية السعودية"
+      name: "المملكة العربية السعودية",
     },
-    "serviceType": [
+    serviceType: [
       "خدمات التنظيف",
       "خدمات السباكة",
       "خدمات الكهرباء",
@@ -50,49 +50,33 @@ function OrganizationStructuredData() {
       "خدمات النجارة",
       "خدمات الدهانات",
       "خدمات العزل",
-      "مكافحة الحشرات"
+      "مكافحة الحشرات",
     ],
-    "priceRange": "$$",
-    "openingHoursSpecification": {
+    priceRange: "$$",
+    openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
+      dayOfWeek: [
         "Saturday",
         "Sunday",
         "Monday",
         "Tuesday",
         "Wednesday",
-        "Thursday"
+        "Thursday",
       ],
-      "opens": "08:00",
-      "closes": "22:00"
+      opens: "08:00",
+      closes: "22:00",
     },
-    "sameAs": [
-      // Add your social media URLs here
-      // "https://twitter.com/nafzha",
-      // "https://www.instagram.com/nafzha",
-      // "https://www.facebook.com/nafzha"
-    ]
-  };
+  }
 
   const websiteData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://nafezha-home-services.vercel.app/",
-    "name": "نفذها",
-    "url": "https://nafezha-home-services.vercel.app/",
-    "publisher": {
-      "@id": "https://nafezha-home-services.vercel.app/"
-    },
-    "inLanguage": "ar-SA",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://nafezha-home-services.vercel.app/search?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
-  };
+    "@id": `${SITE_URL}/#website`,
+    name: "نفذها",
+    url: SITE_URL,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    inLanguage: "ar-SA",
+  }
 
   return (
     <>
@@ -105,103 +89,61 @@ function OrganizationStructuredData() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }}
       />
     </>
-  );
+  )
 }
 
-// Separate viewport export (Next.js 14+ best practice)
 export const viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#1a365d', // Update with your brand color
-};
+  themeColor: "#1a365d",
+}
 
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "نفذها - خدمات منزلية وصيانة متكاملة في السعودية",
-    template: "%s | نفذها"
+    template: "%s | نفذها",
   },
-  description: "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية. فرقنا الفنية متخصصة وتعمل وفق أعلى معايير الجودة، لتلبية جميع احتياجات المنازل، الفلل، المباني، والمشاريع تحت سقف واحد وبحلول عملية وسريعة.",
-  keywords: [
-    "خدمات منزلية",
-    "صيانة منزلية",
-    "السعودية",
-    "تنظيف",
-    "سباكة",
-    "كهرباء",
-    "تكييف",
-    "نجارة",
-    "دهانات",
-    "عزل",
-    "مكافحة حشرات",
-    "حدادة",
-    "ألمنيوم",
-    "هناجر",
-    "خدمات منازل السعودية",
-    "نفذها",
-    "صيانة الرياض",
-    "صيانة جدة",
-    "خدمات منزلية الرياض"
-  ],
+  description:
+    "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية. فرقنا الفنية متخصصة وتعمل وفق أعلى معايير الجودة، لتلبية جميع احتياجات المنازل، الفلل، المباني، والمشاريع تحت سقف واحد وبحلول عملية وسريعة.",
   authors: [{ name: "نفذها" }],
   creator: "نفذها",
   publisher: "نفذها",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://nafezha-home-services.vercel.app/'), // Updated to production domain
   alternates: {
-    canonical: '/',
-    languages: {
-      'ar-SA': '/',
-    },
+    canonical: "/",
+    languages: { "ar-SA": "/" },
   },
-  // Icons and favicons
   icons: {
-    icon: [
-      { url: '/icon.png', sizes: 'any' },
-    ],
-    apple: [
-      { url: '/icon.png', sizes: '180x180' },
-    ],
-    shortcut: '/icon.png',
+    icon: [{ url: "/icon.png", sizes: "any" }],
+    apple: [{ url: "/icon.png", sizes: "180x180" }],
+    shortcut: "/icon.png",
   },
-  // Manifest for PWA
-  manifest: '/manifest.json',
-  // Verification tags - add your verification codes here
-  verification: {
-    google: 'your-google-verification-code', // Add your Google Search Console code
-    // yandex: 'your-yandex-code',
-    // bing: 'your-bing-code',
-  },
-  // Category for better classification
-  category: 'home services',
-  // Open Graph
+  manifest: "/manifest.json",
+  category: "home services",
   openGraph: {
     title: "نفذها - خدمات منزلية وصيانة متكاملة في السعودية",
-    description: "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية. فرقنا الفنية متخصصة وتعمل وفق أعلى معايير الجودة.",
-    url: 'https://nafezha-home-services.vercel.app/',
-    siteName: 'نفذها',
-    locale: 'ar_SA',
-    type: 'website',
+    description:
+      "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية.",
+    url: SITE_URL,
+    siteName: "نفذها",
+    locale: "ar_SA",
+    type: "website",
     images: [
       {
-        url: '/icon.png',
+        url: "/icon.png",
         width: 512,
         height: 512,
-        alt: 'نفذها - خدمات منزلية وصيانة في السعودية',
+        alt: "نفذها - خدمات منزلية وصيانة في السعودية",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: "نفذها - خدمات منزلية وصيانة متكاملة في السعودية",
-    description: "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية.",
-    images: ['/icon.png'],
-    // creator: '@nafzha', // Add your Twitter handle
-    // site: '@nafzha',
+    description:
+      "نقدم خدمات منزلية وصيانة متكاملة تغطي جميع مدن المملكة العربية السعودية.",
+    images: ["/icon.png"],
   },
   robots: {
     index: true,
@@ -209,17 +151,16 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  // Additional meta tags for Arabic SEO
   other: {
-    'google': 'notranslate', // Prevent auto-translation
-    'content-language': 'ar-SA',
+    google: "notranslate",
+    "content-language": "ar-SA",
   },
-};
+}
 
 export default function RootLayout({ children }) {
   return (
@@ -229,12 +170,12 @@ export default function RootLayout({ children }) {
       </head>
       <body
         className={`${notoSansArabic.variable} antialiased`}
-        style={{ fontFamily: 'var(--font-noto-arabic), system-ui, sans-serif' }}
+        style={{ fontFamily: "var(--font-noto-arabic), system-ui, sans-serif" }}
       >
         <Navbar />
         {children}
         <Footer />
       </body>
     </html>
-  );
+  )
 }

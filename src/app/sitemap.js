@@ -1,26 +1,34 @@
-import { categories } from "@/db/data";
+import { categories, saudiCities } from "@/db/data"
+import { SITE_URL } from "@/lib/site"
 
 export default function sitemap() {
-  const baseUrl = 'nafezha-home-services.com';
-  const currentDate = new Date();
+  const now = new Date()
 
-  // Home page
-  const routes = [
+  const home = [
+    { url: SITE_URL, lastModified: now, changeFrequency: "daily", priority: 1 },
     {
-      url: baseUrl,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 1.0,
+      url: `${SITE_URL}/terms`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
-  ];
+  ]
 
-  // Add all category pages
-  const categoryRoutes = categories.map((category) => ({
-    url: `${baseUrl}/services/${encodeURIComponent(category.slug)}`,
-    lastModified: currentDate,
-    changeFrequency: 'weekly',
+  const cityRoutes = saudiCities.map((city) => ({
+    url: `${SITE_URL}/services/${encodeURIComponent(city.slug)}`,
+    lastModified: now,
+    changeFrequency: "weekly",
     priority: 0.8,
-  }));
+  }))
 
-  return [...routes, ...categoryRoutes];
+  const serviceRoutes = saudiCities.flatMap((city) =>
+    categories.map((category) => ({
+      url: `${SITE_URL}/services/${encodeURIComponent(city.slug)}/${encodeURIComponent(category.slug)}`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    }))
+  )
+
+  return [...home, ...cityRoutes, ...serviceRoutes]
 }
